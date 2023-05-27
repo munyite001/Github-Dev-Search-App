@@ -27,6 +27,10 @@ main {
   font-weight: 700;
 }
 
+.theme-switcher {
+  cursor: pointer;
+}
+
 i {
   margin: 0.5rem;
 }

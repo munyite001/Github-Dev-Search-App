@@ -7,6 +7,20 @@ export default function App()
 {
   //  Themes
   const [theme, setTheme] = useState("light")
+  const [user, setUser] = useState({
+    name: "The Octocat",
+    login: "@octocat",
+    avatar_url:require("./images/Bitmap.png"),
+    created_at: "25 Jan 2011",
+    bio: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.",
+    public_repos: "8",
+    followers: "3938",
+    following: "9",
+    location: "San Francisco",
+    twitter_username: "Not Available",
+    blog: "https://github.blog",
+    company: "@github",
+  });
 
   const themes = {
     light: {
@@ -48,8 +62,8 @@ export default function App()
           </p>
         </div>
       </div>
-      <Search style={componentStyles}/>
-      <UserDetails style={componentStyles} theme={theme}/>
+      <Search style={componentStyles} setUserInfo={setUser} userInfo={user}/>
+      <UserDetails userInfo={user} style={componentStyles} theme={theme}/>
     </main>
   )
 }
