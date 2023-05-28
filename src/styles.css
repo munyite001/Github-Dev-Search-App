@@ -5,6 +5,14 @@
   font-family: 'Space Mono', monospace;
 }
 
+a {
+  text-decoration: inherit;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
 body, main {
   width: 100%;
   min-height: 100vh;
@@ -12,6 +20,7 @@ body, main {
 
 main {
   border: 1px solid transparent;
+  padding: 0 0 1rem 0;
 }
 
 .title {
@@ -49,7 +58,8 @@ i {
   width: 10rem;
   margin:0 0 0 auto;
   font-size: 12px;
-  color: red;
+  color: #F74646;
+;
   font-weight: 700;
 }
 
