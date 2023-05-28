@@ -2,6 +2,18 @@ import React from "react";
 
 export default function UserDetails(props)
 {
+    function formatDate(dateString)
+    {
+        const date = new Date(dateString);
+        const year = date.getFullYear();
+        const month = date.toLocaleString("default", { month: "short" });
+        const day = date.getDate();
+
+        const formattedDate = `${year} ${month} ${day}`;
+
+        return formattedDate;
+    }
+
     return (
         <div className="user-details" style={props.style}>
             <div className="top-row">
@@ -14,12 +26,12 @@ export default function UserDetails(props)
                         <p style={{color:"#0079FF"}}>{props.userInfo.login}</p>
                     </div>
                     <div className="join-date">
-                        <p>Joined {props.userInfo.created_at}</p>
+                        <p>Joined {formatDate(props.userInfo.created_at)}</p>
                     </div>
                 </div>
             </div>
             <div className="description">
-                <p>{props.userInfo.bio}</p>
+                <p>{props.userInfo.bio===""?"This profile has no description":props.userInfo.bio}</p>
             </div>
             <div className="user-stats" 
             style={{backgroundColor: props.theme==="light"?"#F6F8FF":"#141D2F"}}>
@@ -39,19 +51,19 @@ export default function UserDetails(props)
             <div className="user-links">
                 <div className="link">
                     <i class="fa-sharp fa-solid fa-location-dot"></i>
-                    <p>{props.userInfo.location}</p>
+                    <p>{props.userInfo.location===""?"Not Available":props.userInfo.location}</p>
                 </div>
                 <div className="link">
                     <i class="fa-solid fa-link"></i>
-                    <p>{props.userInfo.blog}</p>
+                    <p>{props.userInfo.blog===""?"Not Available":props.userInfo.blog}</p>
                 </div>
                 <div className="link">
                     <i class="fa-brands fa-twitter"></i>
-                    <p>{props.userInfo.twitter_username}</p>
+                    <p>{props.userInfo.twitter_username === "" ? "Not Available" : props.userInfo.twitter_username}</p>
                 </div>
                 <div className="link">
                     <i class="fa-solid fa-building"></i>
-                    <p>{props.userInfo.company}</p>
+                    <p>{props.userInfo.company === ""? "Not Available" :props.userInfo.company}</p>
                 </div>
             </div>
         </div>

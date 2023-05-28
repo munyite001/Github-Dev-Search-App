@@ -17,7 +17,7 @@ main {
 .title {
   max-width: 760px;
   width: 90%;
-  margin: 5rem auto 0;
+  margin: 1rem auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,6 +45,14 @@ i {
   border-radius: 10px;
 }
 
+.search-box span {
+  width: 10rem;
+  margin:0 0 0 auto;
+  font-size: 12px;
+  color: red;
+  font-weight: 700;
+}
+
 .search-box i {
   margin: 0 1rem;
   color: #0079FF;
@@ -52,7 +60,7 @@ i {
 
 .search-box .input-box {
   height: 100%;
-  width: 90%;
+  width: 70%;
 }
 
 .search-box button {
@@ -198,7 +206,7 @@ i {
     font-size: 16px;
   }
   .description {
-    margin: -3rem 0 0 auto;
+    margin: 0 0 0 auto;
     max-width: 480px;
   }
 
